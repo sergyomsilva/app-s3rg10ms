@@ -17,7 +17,7 @@ class ProductTransactionController extends Controller
     public function index(Product $product)
     {
         $transactions = $product->transactions()
-            ->with('product:sku,product_id')
+            ->with('product:sku,id')
             ->get();
 
         return response()->json($transactions);

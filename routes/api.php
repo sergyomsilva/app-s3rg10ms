@@ -25,8 +25,7 @@ Route::name('api.')->group(function () {
     Route::apiResource('products', ProductController::class);
 
     // Product transactions
-    Route::get('/products/transactions', [ProductTransactionController::class, 'index']);
-    Route::get('/products/{product}/transactions', [ProductTransactionController::class, 'show']);
+    Route::get('/products/{product}/transactions', [ProductTransactionController::class, 'index']);
     Route::post('/products/{product}/transactions', [ProductTransactionController::class, 'store']);
     Route::post('/products/{product}/transactions', [ProductTransactionController::class, 'store']);
 

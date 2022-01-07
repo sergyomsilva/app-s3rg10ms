@@ -25,4 +25,16 @@ class ProductTransaction extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function getTypeAttribute($value)
+    {
+        switch ($value){
+            case "in":
+                return "entrada";
+            case "out":
+                return "saída";
+            default:
+                return "não informado";
+        }
+    }
 }
