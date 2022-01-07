@@ -11,8 +11,16 @@ class Product extends Model
 
     protected $fillable = [
         'name',
-        'sku',
-        'quantity',
+        'sku'
     ];
 
+    protected $casts = [
+        'updated_at' => 'date:Y-m-d',
+        'created_at' => 'date:Y-m-d',
+    ];
+
+    public function transactions()
+    {
+        return $this->hasMany(ProductTransaction::class);
+    }
 }

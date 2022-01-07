@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\ProductTransactionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,4 +23,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::name('api.')->group(function () {
 
     Route::apiResource('products', ProductController::class);
+
+    // Product transactions
+    Route::get('/products/transactions', [ProductTransactionController::class, 'index']);
+    Route::get('/products/{product}/transactions', [ProductTransactionController::class, 'show']);
+    Route::post('/products/{product}/transactions', [ProductTransactionController::class, 'store']);
+    Route::post('/products/{product}/transactions', [ProductTransactionController::class, 'store']);
+
 });
