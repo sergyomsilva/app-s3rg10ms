@@ -54,10 +54,10 @@ accept : application/json
 
 **Body** json
 ```json
-`{
+{
   "name": "Notebook 1",
   "sku": "NOT-12345"
-}`
+}
 ```
 ------------
 **PUT** - Editar Produto
@@ -73,10 +73,11 @@ accept : application/json
 **Body** json
 
 ```json
-`{
+{
   "name": "Notebook 2",
   "sku": "NOT-12345"
-}`
+}
+```
 ```
 ------------
 **DELETE** - Deletar produto
