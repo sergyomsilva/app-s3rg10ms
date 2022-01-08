@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ProductTransactionController;
+use App\Http\Controllers\Api\ReportController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,11 +23,20 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::name('api.')->group(function () {
 
-    Route::apiResource('products', ProductController::class);
+    //Reports
+    Route::get('/products/transactions', [ReportController::class, 'index']);
 
     // Product transactions
     Route::get('/products/{product}/transactions', [ProductTransactionController::class, 'index']);
     Route::post('/products/{product}/transactions', [ProductTransactionController::class, 'store']);
     Route::post('/products/{product}/transactions', [ProductTransactionController::class, 'store']);
+
+    Route::apiResource('products', ProductController::class);
+
+
+
+
+
+
 
 });

@@ -24,10 +24,7 @@ class TransactionRequest extends FormRequest
     public function rules()
     {
         return [
-            'type' => [
-                'required',
-                'in:in,out',
-            ],
+            'type' => [ 'required', 'in:in,out' ],
             'quantity' => [ 'required','integer' ],
             'product_id' => ['exists:products,id']
         ];

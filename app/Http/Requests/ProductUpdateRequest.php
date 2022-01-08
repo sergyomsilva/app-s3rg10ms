@@ -30,8 +30,11 @@ class ProductUpdateRequest extends FormRequest
                 Rule::unique('products', 'name')->ignore($this->product),
                 'string',
             ],
-            'sku' => ['required', 'string'],
-            'quantity' => ['required', 'integer'],
+            'sku' => [
+                'required',
+                Rule::unique('products', 'sku')->ignore($this->sku),
+                'string',
+            ]
         ];
     }
 }
