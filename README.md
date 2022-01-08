@@ -78,7 +78,6 @@ accept : application/json
   "sku": "NOT-12345"
 }
 ```
-```
 ------------
 **DELETE** - Deletar produto
 
